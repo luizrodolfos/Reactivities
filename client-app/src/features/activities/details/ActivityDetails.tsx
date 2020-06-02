@@ -11,7 +11,7 @@ interface IProps {
 export const ActivityDetails: React.FC<IProps> = ({
   activity,
   setSelectedActivity,
-  setEditMode,
+  setEditMode
 }) => {
   return (
     <Card fixed="top" fluid>
@@ -46,3 +46,5 @@ export const ActivityDetails: React.FC<IProps> = ({
     </Card>
   );
 };
+
+export default ActivityDetails;
