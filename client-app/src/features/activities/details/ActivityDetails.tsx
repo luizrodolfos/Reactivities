@@ -7,8 +7,8 @@ export const ActivityDetails = () => {
   const activityStore = useContext(ActivityStore);
   const {
     selectedActivity: activity,
-    setSelectedActivity,
-    setEditMode,
+    cancelSelectedActivity,
+    openEditForm,
   } = activityStore;
   return (
     <Card fixed="top" fluid>
@@ -30,13 +30,13 @@ export const ActivityDetails = () => {
             basic
             color="blue"
             content="Edit"
-            onClick={() => setEditMode(true)}
+            onClick={() => openEditForm(activity!.id)}
           />
           <Button
             basic
             color="grey"
             content="Cancel"
-            onClick={() => setSelectedActivity(undefined)}
+            onClick={() => cancelSelectedActivity()}
           />
         </Button.Group>
       </Card.Content>

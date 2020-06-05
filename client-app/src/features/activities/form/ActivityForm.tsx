@@ -9,10 +9,10 @@ const ActivityForm = () => {
   const activityStore = useContext(ActivityStore);
   const {
     selectedActivity: initialFormState,
-    setEditMode,
+    cancelFormOpen,
     createActivity,
     editActivity,
-    submitting
+    submitting,
   } = activityStore;
   const initializeForm = () => {
     if (initialFormState) {
@@ -94,17 +94,18 @@ const ActivityForm = () => {
           placeholder="Venue"
           value={activity.venue}
         />
-        <Button 
-          floated="right" 
-          positive 
-          type="submit" 
+        <Button
+          floated="right"
+          positive
+          type="submit"
           content="Submit"
-          loading={submitting && formSubmitting} />
+          loading={submitting && formSubmitting}
+        />
         <Button
           floated="right"
           type="button"
           content="Cancel"
-          onClick={() => setEditMode(false)}
+          onClick={() => cancelFormOpen()}
         />
       </Form>
     </Segment>
